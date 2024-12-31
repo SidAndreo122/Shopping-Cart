@@ -1,0 +1,41 @@
+.nav_container {
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    display: flex;
+    gap: 15px;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(135deg, #3e3e3e, #161616);
+    box-shadow: 0 2px 7px 3px rgba(0, 0, 0, 0.3);
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.logo_title {
+    margin-right: 50px;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.links_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+    
+    &:hover {
+        filter: brightness(1) hue-rotate(354deg) brightness(98%) contrast(110%);
+    }
+
+}
+
+.links_container li, .links_container a {
+    text-decoration: none;
+    list-style: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
