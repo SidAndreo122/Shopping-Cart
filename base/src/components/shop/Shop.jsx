@@ -54,7 +54,8 @@ function Shop() {
             {!name ? ( // if block
                 <>
                 <NavBar />
-                <div className={styles.cart_container}>
+                // Making the cartbutton direct user to cart page
+                <div className={styles.cart_container}> 
                     <CartButton onClick={() => name !== 'cart'}
                     counter={cart.counter}
                     />
