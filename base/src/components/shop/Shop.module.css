@@ -1,0 +1,18 @@
+.listCards_container {
+    list-style: none;
+    text-align: center;
+    margin: 10px;
+}
+
+.category_aside > ul li{
+    list-style: none;
+}
+
+.category_aside {
+    text-align: left;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}

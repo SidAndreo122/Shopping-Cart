@@ -1,10 +1,16 @@
 import styles from './ShopCard.module.css';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import { CircleCheckBig, CirclePlus, Star } from 'lucide-react';
 import InputCounter from './InputCounter';
+import { CartContext } from '../context/CartContext';
 
 function ProductCard(props) {
+    const { value, setValue} = useState(1);
+    const { cart, addToCart } = useContext(CartContext);
+
+    const isAdded = cart.some((item) => item.id === props.id);
+
     const handleAddBtn = () => {
         const product = {
             id: props.id,
@@ -13,8 +19,9 @@ function ProductCard(props) {
             qty: value,
             price: props.price,
         };
-        
+        addToCart(product)
     };
+
     return (
         <div className={styles.product_card_container}>
             <img src={props.image} alt={props.title}/>
@@ -33,7 +40,7 @@ function ProductCard(props) {
                 <div>
                     {/*Increment decrement react component button */}
                     <InputCounter value={value} setValue={setValue} />
-                    <button className={} onClick={handleAddBtn}>
+                    <button className={isAdded ? styles.addedtoCartBtn : styles.addtoCartBtn} onClick={handleAddBtn} disabled={isAdded}>
                         {isAdded ? (
                             <>
                                 <CircleCheckBig size={18} strokewidth={2}/>

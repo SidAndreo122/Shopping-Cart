@@ -1,0 +1,16 @@
+.product_card_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product_card_container > img{
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}

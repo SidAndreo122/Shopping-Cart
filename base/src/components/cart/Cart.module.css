@@ -1,0 +1,9 @@
+.srcimg_container > img {
+    width: 200px;
+    height: auto;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
