@@ -6,7 +6,7 @@ import InputCounter from './InputCounter';
 import { CartContext } from '../context/CartContext';
 
 function ProductCard(props) {
-    const { value, setValue} = useState(1);
+    const [ value, setValue ] = useState(1);
     const { cart, addToCart } = useContext(CartContext);
 
     const isAdded = cart.some((item) => item.id === props.id);
@@ -16,16 +16,23 @@ function ProductCard(props) {
             id: props.id,
             title: props.title,
             image: props.image,
-            qty: value,
+            quantity: value,
             price: props.price,
         };
         addToCart(product)
     };
 
+    // const handleItemRemove = (item) => {
+    //     removeFromCart(item);
+    // };
+
     return (
         <div className={styles.product_card_container}>
             <img src={props.image} alt={props.title}/>
             {/*Button for reading product description, or link to a product page */}
+            <div className={styles.product_title}>
+                <p>{props.title}</p>
+            </div>
             <div className={styles.product_stats}>
                 <div>
                     <p className={styles.product_price}>$ {props.price}</p>
@@ -39,8 +46,10 @@ function ProductCard(props) {
                 </div>
                 <div>
                     {/*Increment decrement react component button */}
+                    <div className={styles.updowncounter}>
                     <InputCounter value={value} setValue={setValue} />
-                    <button className={isAdded ? styles.addedtoCartBtn : styles.addtoCartBtn} onClick={handleAddBtn} disabled={isAdded}>
+                    </div>
+                    <button className={isAdded ? styles.addedtoCartBtn : styles.addtoCartBtn} onClick={handleAddBtn } disabled={isAdded}>
                         {isAdded ? (
                             <>
                                 <CircleCheckBig size={18} strokewidth={2}/>

@@ -76,14 +76,14 @@ function Shop() {
                         {uniqueCategories.map((category, index) => (
                             <li key={index}>
                                 <button onClick={handleCategory} className={activeCategory === category ? styles.activeCategory : ""}>
-                                    {">"}
+                                    
                                         {category}
                                 </button>
                             </li>
                         ))}
                         <li>
                             <button onClick={handleCategory} className={styles.allProducts_container}>
-                                {">"}
+                                
                                     Show all products
                             </button>
                         </li>

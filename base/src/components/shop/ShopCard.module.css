@@ -1,15 +1,105 @@
 .product_card_container {
+    padding: 15px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    height: 100%;
+    text-align: center;
 }
-.product_card_container > img{
-    width: 300px;
-    height: auto;
+.product_card_container img{
+    width: 80%;
+    height: 240px;
+    object-fit: contain;
     margin-top: 20px;
     margin-bottom: 20px;
+    border-radius: 8px;
+    display: block;
 }
 
+.product_card_container p {
+    margin: 10px 0;
+}
+
+.product_title {
+    font-size: large;
+    font-weight: bold;
+}
+
+.product_card_container .product_price {
+    font-size: 1.2rem;
+    color: #3498db;
+    font-weight: bold;
+}
+.product_card_container .updowncounter {
+    display: flex; /* Aligns counter elements horizontally */
+    justify-content: space-between; /* Adds spacing between the counter and button */
+    align-items: center; /* Vertically centers counter elements */
+    gap: 10px; /* Adds space between the counter and the button */
+    margin-top: 10px;
+    margin-left: 12px;
+    margin-bottom: 5px;
+    
+}
+
+.addtoCartBtn {
+    background-color: #28a745;
+    color: white;
+}
+
+.addtoCartBtn:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+.addtoCartBtn:active {
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+.addedtoCartBtn {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.addedtoCartBtn:hover {
+    background-color: #138496;
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+.addedtoCartBtn:active {
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+
+
+.updowncounter button {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.updowncounter button:hover {
+    background-color: #e0e0e0;
+}
+
+.updowncounter button:active {
+    transform: scale(0.95);
+}
+
+.updowncounter span {
+    width: 50px;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #fff;
+}
 * {
     box-sizing: border-box;
     margin: 0;
