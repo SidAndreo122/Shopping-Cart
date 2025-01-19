@@ -81,7 +81,7 @@ function Cart() {
                 <p>Subtotal: <span>$ {subtotal.toFixed(2)}</span></p>
                 
             </div>
-            <div>
+            <div className={styles.cart_end_container}>
             <button className={styles.checkout_button} onClick={() => navigateTo('/')}>
                     Confirm & Pay
                 </button> 
