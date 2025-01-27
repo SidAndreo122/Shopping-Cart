@@ -8,7 +8,7 @@ function NavBar() {
         <div className={styles.nav_container}>
             <Link to="/">
                 <h1 className={styles.logo_title}>
-                    <ShoppingBasket size={35}/> Stop n&apos; Shop
+                    <ShoppingBasket size={35}/> Retailio
                 </h1>
             </Link> 
             <ul className={styles.links_container}>

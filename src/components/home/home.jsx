@@ -45,7 +45,7 @@ function Home() {
             <div className={styles.home_container}>
             <div className={styles.home_title}>
             <h1>
-                Welcome to Stop n&apos; Stop!
+                Welcome to Retailio!
             </h1>
             </div>
             <div className={styles.description}>
