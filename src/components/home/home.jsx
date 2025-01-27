@@ -23,7 +23,7 @@ function Home() {
         {
             id: 3,
             img: "",
-            caption: "Caption text",
+            caption: "Caption Text",
         },
     ];
 
