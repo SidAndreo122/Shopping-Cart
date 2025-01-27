@@ -1,3 +1,4 @@
+import { ShoppingBasket } from "lucide-react";
 import styles from "./nav.module.css";
 import { Link } from 'react-router-dom';
 
@@ -7,15 +8,15 @@ function NavBar() {
         <div className={styles.nav_container}>
             <Link to="/">
                 <h1 className={styles.logo_title}>
-                    Stop n`&apos` Shop
+                    <ShoppingBasket size={35}/> Stop n&apos; Shop
                 </h1>
             </Link> 
             <ul className={styles.links_container}>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/" className={styles.nav_link}>Home</Link>
                 </li>
                 <li>
-                    <Link to="/shop">Shop</Link>
+                    <Link to="/shop" className={styles.nav_link}>Shop</Link>
                 </li>
             </ul>
         </div>

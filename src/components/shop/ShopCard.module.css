@@ -104,3 +104,30 @@
     box-sizing: border-box;
     margin: 0;
 }
+
+@media (max-width: 1024px) {
+    .product_card_container img {
+        max-height: 200px;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .product_card_container {
+        max-width: 200px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .product_card_container {
+        padding: 10px;
+    }
+    .addtoCartBtn, .addedtoCartBtn {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    .product_title {
+        font-size: medium;
+    }
+}

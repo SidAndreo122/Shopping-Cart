@@ -1,15 +1,15 @@
-import { useContext, useState } from 'react'
+import { useContext} from 'react'
 import styles from './Cart.module.css'
 import { CartContext } from '../context/CartContext'
-import { CreditCard, MoveLeft, ShoppingBag, Trash2, UserPenIcon} from 'lucide-react';
+import { MoveLeft, ShoppingBag, Trash2} from 'lucide-react';
 import InputCounter from '../shop/InputCounter';
 import { useNavigate } from 'react-router-dom';
-import Modal from './Modal';
+
 
 function Cart() {
     const { cart, setCart, removeFromCart } = useContext(CartContext);
     const navigateTo = useNavigate();
-    const [modal, setModal] = useState(false);
+    
 
     // use reduce method to get a single constant subtotal value
     const subtotal = cart.reduce(
@@ -17,10 +17,7 @@ function Cart() {
         0
     );
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        setModal(true);
-    };
+    
 
     const handleItemRemove = (item) => {
         removeFromCart(item);
@@ -82,77 +79,11 @@ function Cart() {
                 
             </div>
             <div className={styles.cart_end_container}>
-            <button className={styles.checkout_button} onClick={() => navigateTo('/')}>
+            <button className={styles.checkout_button} onClick={() => navigateTo('/checkout')}>
                     Confirm & Pay
                 </button> 
             </div>
-            {/* Redirect to new page potentially */}
-            <form className={styles.checkout_container} onSubmit={handleSubmit}>
-                <div className={styles.form_child_container}>
-                    <h2> Personal Info <UserPenIcon /></h2>
-                    <label htmlFor='FirstName'>
-                        First Name
-                    </label>
-                    <input type="text" id='FirstName' required />
-                    <label htmlFor='LastName'>
-                        Last Name
-                    </label>
-                    <input type='text' id='LastName' required />
-                    <label htmlFor='email'>
-                        Email Address
-                    </label>
-                    <input type='email' id='email' required />
-                    <label htmlFor='phoneNumber'>
-                        Phone Number
-                    </label>
-                    <input type='phone' id='phoneNumber' required />
-                    <label htmlFor='address'>
-                        Shipping Address
-                    </label>
-                    <input type='text' id="address" required />
-                    <h2> Card Details <CreditCard /></h2>
-                    <label htmlFor='CardName'>
-                        Name of Card
-                    </label>
-                    <input type='text' id='CardName' required />
-                    <label htmlFor='cardNumber'>
-                        Card Number
-                    </label>
-                    <input type='number' id="cardNumber" required />
-                    <label htmlFor='ExpireDate'>
-                        Valid Thru
-                    </label>
-                    <div className={styles.ExpireDate}>
-                        <input type='number' placeholder='MM' required />
-                        <span>/</span>
-                        <input type='number' placeholder='DD' required />
-                        <span>/</span>
-                        <input type='number' maxLength={3} placeholder='YYYY' required />
-                    </div>
-                    <label htmlFor='cvv'>
-                        CVV 
-                    </label>
-                    <input type='number' id="cvv" required />
-                    
-                </div>
-                <button id='checkout_button'>Checkout</button>
-
-            </form>
-            <Modal isOpen={modal} OnClose={() => setModal(false)}>
-                {/* If block*/}
-                {cart.length !== 0 ? (
-                    <>
-                        <h2>Thank you for your purchase!</h2>
-                        <p>Your order has been successfully placed.</p>
-                    </>
-                // Else Block 
-                ) : (
-                    <>
-                        <h2>Your cart is currently empty.</h2>
-                        <p>Add some items to your cart and come back to checkout.</p>
-                    </>
-                )}
-            </Modal>
+            
         </div>
     );
 }

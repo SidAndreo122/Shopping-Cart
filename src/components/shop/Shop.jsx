@@ -59,7 +59,7 @@ function Shop() {
     );
 
     return (
-        <div>
+        <div className={styles.container}>
             
             {!name ? ( // if block
                 <>
