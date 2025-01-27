@@ -8,7 +8,7 @@ import { CartContext } from '../context/CartContext'
 
 function Home() {
     const [slideIndex, setSlideIndex] = useState(1);
-    const { addToCart } = useContext(CartContext);
+    // const { addToCart } = useContext(CartContext);
     const slides = [
         {
             id: 1,
@@ -23,7 +23,7 @@ function Home() {
         {
             id: 3,
             img: "",
-            caption: "Caption Text",
+            caption: "Caption text",
         },
     ];
 
